@@ -78,3 +78,16 @@ for k in range(x):
     su=0
     for h in range(a,a+z):su+=l[k][h]
     print(su,end=' ')
+    
+
+    
+SOLUTION 2:
+ R, C = map(int, input().split())
+L = [[*map(int, input().split())] for i in range(R)]
+K = int(input())
+Ind = [i for i in range(C - K + 1)]
+Ind = Ind + Ind[1:][:-1][::-1]
+l = len(Ind)
+for i in range(R):
+    I = Ind[i % l]
+    print(sum(L[i][I:I + K]), end = ' ')
