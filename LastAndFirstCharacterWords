@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char S1[1000],a[20][1000];
+    int i,k=0,flag=0;
+    while(scanf("%s",S1)!=-1)
+    {
+        strcpy(a[k++],S1);
+    }
+    for(i=1;i<k;i++)
+    {
+        if(a[i][0]==a[i-1][strlen(a[i-1])-1])
+        {
+            printf("%s ",a[i]);
+            flag=1;
+        }    
+    }
+    if(flag==0)
+        printf("-1");
+}

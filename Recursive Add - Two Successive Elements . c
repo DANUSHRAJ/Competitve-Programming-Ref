@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int N,i,j,val=0,sum=0;
+    scanf("%d",&N);
+    int a[N],b[N];
+    for(i=0;i<N;i++)
+        scanf("%d",&a[i]);
+    while(1)
+    {
+        for(i=0;i<=N-2;i++)
+            b[i]=a[i]+a[i+1];
+        N-=1;
+        for(j=0;j<i;j++)
+            a[j]=b[j];
+        if(i==1)
+        {
+            val=b[0];
+            break;
+        }
+    }
+    while(val>0||sum>9)
+    {
+        if(val==0)
+        {
+            val=sum;
+            sum=0;
+        }
+        sum+=val%10;
+        val/=10;
+    }
+    printf("%d",sum);
+}

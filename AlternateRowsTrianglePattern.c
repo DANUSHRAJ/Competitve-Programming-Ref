@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N,i,j,k=0,c=0,count=0;
+    scanf("%d",&N);
+    for(i=1;i<=N;i++)
+    {
+        count=0;
+        while(count<N-i)
+        {
+            printf("-");
+            count++;
+        }
+        if(i==1)
+        {
+            printf("1");
+            k=1;
+            c=i;
+        }
+        else
+        {
+            if(i%2==0)
+            {
+                k+=i;
+                c=k;
+                count=0;
+                do
+                {
+                    if(count!=i-1)
+                    {
+                        printf("%d-",k);
+                        k--;
+                        count++;
+                    }
+                    else
+                    {
+                        printf("%d",k);
+                        count++;
+                    }
+                }while(count<i);    
+            }
+            else
+            {
+                count=0;
+                do
+                {
+                    if(count!=i-1)
+                    {
+                        c++;
+                        printf("%d-",c);
+                        count++;
+                    }
+                    else
+                    {
+                        c++;
+                        printf("%d",c);
+                        count++;
+                    }
+                }while(count<i);
+                k=c;
+            }
+        }
+        printf("\n");
+    }
+}
