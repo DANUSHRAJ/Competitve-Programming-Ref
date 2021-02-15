@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char S[1000];
+    int N,X,Y,i;
+    scanf("%s%n%d%d",S,&N,&X,&Y);
+    for(i=X;i<N-Y;i++)
+        printf("%c",S[i]);
+}
