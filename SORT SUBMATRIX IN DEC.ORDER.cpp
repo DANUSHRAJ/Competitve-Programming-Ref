@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int N,K,i,j,k,l,a[100][100],sum,posi,posj,max=0,x=0,t,b[100][10],m,co,c[100][100],p,q,r,s,d;
+scanf("%d\n",&N);
+for(i=0;i<N;i++,scanf("\n"))
+    for(j=0;j<N;j++)
+        scanf("%d ",&a[i][j]);
+scanf("%d",&K);
+for(i=0;i<N;i+=K)
+    for(j=0;j<N;j+=K){
+        sum=0;
+        for(k=i;k<i+K;k++)
+            for(l=j;l<j+K;l++)
+                sum+=a[k][l];
+        b[x][0]=sum;
+        b[x][1]=i;
+        b[x][2]=j;
+        x++;
+    }
+for(i=0;i<x-1;i++)
+    for(j=0;j<x-i-1;j++)
+        if(b[j][0]<b[j+1][0]){
+            t=b[j][0];
+            b[j][0]=b[j+1][0];
+            b[j+1][0]=t;
+            t=b[j][1];
+            b[j][1]=b[j+1][1];
+            b[j+1][1]=t;
+            t=b[j][2];
+            b[j][2]=b[j+1][2];
+            b[j+1][2]=t;
+        }
+r=0;s=0;
+for(k=0;k<x;k++,s+=K){
+    d=N/K;
+    if(k%d==0&&k!=0){
+        r+=K;
+        s=0;
+    }
+    p=r;
+    for(i=b[k][1];i<b[k][1]+K;i++,p++)
+        for(j=b[k][2],q=s;j<b[k][2]+K;j++,q++)
+            c[p][q]=a[i][j];
+}
+for(i=0;i<N;i++,printf("\n"))
+    for(j=0;j<N;j++)
+        printf("%d ",c[i][j]);
+}
