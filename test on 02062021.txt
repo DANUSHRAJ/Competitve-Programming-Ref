@@ -1,0 +1,102 @@
+Hills Numbers:
+Hills numbers are ODD lengthed numbers.
+
+Let us imagine for a nine digit number, the indidividual digits are represented from d1 to d9
+d1 d2 d3 d4 d5 d6 d7 d8 d9
+
+  d2  d4  d6  d8
+d1  d3  d5  d7  d9
+All even positioned digits will be larger than their adjacent digits
+
+d2 > d1, d3
+d4 > d3, d5
+d6 > d5, d7
+d8 > d7, d9
+
+Ex: 362317680 is a Hills number
+ 6 3 7 8
+3 2 1 6 0
+
+36241 is a 5 digit Hills number
+
+ 6 4
+3 2 1
+
+Given a number check if it is a Hills Number and print
+
+"36412 is a Hills Number" or "56471023 is Not a Hills Number"
+Testcase 1
+Input
+48254
+
+Output
+48254 is a Hills Number
+
+Testcase 2
+Input
+201
+Output
+201 is not a Hills Number
+
+Testcase 3
+Input
+69051401072
+Output
+69051401072 is a Hills Number
+
+Testcase 4
+Input
+123456789
+Output
+123456789 is not a Hills Number
+
+Testcase 5
+Input
+987654321
+Output
+987654321 is not a Hills Number
+
+
+
+Prime Number by Interlacing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Write a 'C' program to take two integers, interlace as per the description and check if the interlaced number is a prime number.
+
+Output : %d and %d Interlaced is %d is a Prime Number
+         %d and %d Interlaced is %d is Not a Prime Number
+Example : 2133 9127
+Interlaced : 29113327
+Prime Check : Prime Number 
+
+Output : 2133 and 9127 Interlaced is 29113327 is a Prime Number
+
+Test Case 1
+360 634867
+
+360 and 634867 Interlaced is 366304867 is a Prime Number
+
+Test Case 2
+
+123456 234
+
+123456 and 234 Interlaced is 122334456 is Not a Prime Number
+
+
+Test Case 3
+
+3868      26983
+
+3868 and 26983 Interlaced 386826983 is a Prime Number
+
+Test Case 4
+
+3489 1356
+
+3489 and 1356 Interlaced is 31438596 is Not Prime Number
+
+Test Case 5
+
+1111 10011
+1111 and 10011 Interlaced is 111010111 is a Prime Number 
+111010111
+
